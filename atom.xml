@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://caiya.github.io/"/>
-  <updated>2016-02-14T14:41:36.570Z</updated>
+  <updated>2016-02-14T14:44:15.355Z</updated>
   <id>http://caiya.github.io/</id>
   
   <author>
@@ -16,13 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>js设置下拉框选中后change事件无效解决</title>
     <link href="http://caiya.github.io/2016/02/14/js%E8%AE%BE%E7%BD%AE%E4%B8%8B%E6%8B%89%E6%A1%86%E9%80%89%E4%B8%AD%E5%90%8Echange%E4%BA%8B%E4%BB%B6%E6%97%A0%E6%95%88%E8%A7%A3%E5%86%B3/"/>
     <id>http://caiya.github.io/2016/02/14/js设置下拉框选中后change事件无效解决/</id>
-    <published>2016-02-14T14:41:36.664Z</published>
-    <updated>2016-02-14T14:41:36.570Z</updated>
+    <published>2016-02-14T14:44:15.411Z</published>
+    <updated>2016-02-14T14:44:15.355Z</updated>
     
-    <content type="html">&lt;p&gt;title: js设置下拉框选中后change事件无效解决&lt;br&gt;下拉框部分代码：&lt;/p&gt;
+    <content type="html">&lt;p&gt;下拉框部分代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;select id=&amp;quot;bigType&amp;quot;&amp;gt;
  &amp;lt;option value=&amp;quot;&amp;quot;&amp;gt;请选择&amp;lt;/option&amp;gt;
  &amp;lt;option value=&amp;quot;1&amp;quot;&amp;gt;xiamen&amp;lt;/option&amp;gt;
@@ -40,7 +40,8 @@
 &lt;pre&gt;&lt;code&gt;jQuery(&amp;quot;#bigType option[value=&amp;quot;1&amp;quot;]&amp;quot;).attr(&amp;quot;selected&amp;quot;,&amp;quot;selected&amp;quot;)
 //jQuery(&amp;quot;#bigType option:contains(&amp;quot;xiamen&amp;quot;)&amp;quot;).attr(&amp;quot;selected&amp;quot;,&amp;quot;selected&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;该change事件不会自动触发，解决办法：&lt;/p&gt;
-&lt;p&gt;自定义change方法，在下拉框中添加onchage事件并传参(当前选中的value值)，在select之后手动调用该change方法即可：&lt;/p&gt;
+&lt;p&gt;自定义change方法，在下拉框中添加onchage事件并传参(当前选中的value值)&lt;/p&gt;
+&lt;p&gt;，在select之后手动调用该change方法即可：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;select id=&amp;quot;bigType&amp;quot; onChange=&amp;quot;getVariety(this.options[this.selectedIndex].value)&amp;quot;&amp;gt;
      &amp;lt;option value=&amp;quot;&amp;quot;&amp;gt;请选择&amp;lt;/option&amp;gt;
 &amp;lt;/select&amp;gt;
@@ -52,9 +53,10 @@ function getVariety(val){
     
     <summary type="html">
     
-      &lt;p&gt;title: js设置下拉框选中后change事件无效解决&lt;br&gt;下拉框部分代码：&lt;/p&gt;
+      &lt;p&gt;下拉框部分代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;select id=&amp;quot;bigType&amp;quot;&amp;gt;
- &amp;lt;option value=&amp;quot;&amp;quot;&amp;gt;请选择&amp;lt;/
+ &amp;lt;option value=&amp;quot;&amp;quot;&amp;gt;请选择&amp;lt;/option&amp;gt;
+ &amp;lt;option value=&amp;quo
     
     </summary>
     
