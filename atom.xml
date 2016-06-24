@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>西安-晁州的博客</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://caiya.github.io/"/>
+  <updated>2016-02-14T14:44:15.355Z</updated>
+  <id>http://caiya.github.io/</id>
+  
+  <author>
+    <name>西安-晁州</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>js设置下拉框选中后change事件无效解决</title>
+    <link href="http://caiya.github.io/2016/02/14/js%E8%AE%BE%E7%BD%AE%E4%B8%8B%E6%8B%89%E6%A1%86%E9%80%89%E4%B8%AD%E5%90%8Echange%E4%BA%8B%E4%BB%B6%E6%97%A0%E6%95%88%E8%A7%A3%E5%86%B3/"/>
+    <id>http://caiya.github.io/2016/02/14/js设置下拉框选中后change事件无效解决/</id>
+    <published>2016-02-14T14:44:15.411Z</published>
+    <updated>2016-02-14T14:44:15.355Z</updated>
+    
+    <content type="html">&lt;p&gt;下拉框部分代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;select id=&amp;quot;bigType&amp;quot;&amp;gt;
+ &amp;lt;option value=&amp;quot;&amp;quot;&amp;gt;请选择&amp;lt;/option&amp;gt;
+ &amp;lt;option value=&amp;quot;1&amp;quot;&amp;gt;xiamen&amp;lt;/option&amp;gt;
+ &amp;lt;option value=&amp;quot;2&amp;quot;&amp;gt;beijing&amp;lt;/option&amp;gt;
+&amp;lt;/select&amp;gt;
+
+&amp;lt;select id=&amp;quot;smallType&amp;quot;&amp;gt;
+     &amp;lt;option value=&amp;quot;&amp;quot;&amp;gt;请选择&amp;lt;/option&amp;gt;
+&amp;lt;/select&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果给”bigType”的下拉框添加change事件来动态改变”smallType”下拉框的值的话，代码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;jQuery(&amp;quot;#bigType&amp;quot;).change(function(){
+    //do something
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;那么，通过js设置”bigType”某项选中后，如：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;jQuery(&amp;quot;#bigType option[value=&amp;quot;1&amp;quot;]&amp;quot;).attr(&amp;quot;selected&amp;quot;,&amp;quot;selected&amp;quot;)
+//jQuery(&amp;quot;#bigType option:contains(&amp;quot;xiamen&amp;quot;)&amp;quot;).attr(&amp;quot;selected&amp;quot;,&amp;quot;selected&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;该change事件不会自动触发，解决办法：&lt;/p&gt;
+&lt;p&gt;自定义change方法，在下拉框中添加onchage事件并传参(当前选中的value值)&lt;/p&gt;
+&lt;p&gt;，在select之后手动调用该change方法即可：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;select id=&amp;quot;bigType&amp;quot; onChange=&amp;quot;getVariety(this.options[this.selectedIndex].value)&amp;quot;&amp;gt;
+     &amp;lt;option value=&amp;quot;&amp;quot;&amp;gt;请选择&amp;lt;/option&amp;gt;
+&amp;lt;/select&amp;gt;
+function getVariety(val){
+     //set some options checked
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;至此解决。。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;下拉框部分代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;select id=&amp;quot;bigType&amp;quot;&amp;gt;
+ &amp;lt;option value=&amp;quot;&amp;quot;&amp;gt;请选择&amp;lt;/option&amp;gt;
+ &amp;lt;option value=&amp;quo
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://caiya.github.io/2016/02/12/hello-world/"/>
+    <id>http://caiya.github.io/2016/02/12/hello-world/</id>
+    <published>2016-02-12T15:53:21.859Z</published>
+    <updated>2016-02-12T15:53:21.859Z</updated>
+    
+    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;http://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;http://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;http://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick_Start&quot;&gt;&lt;a href=&quot;#Quick_Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create_a_new_post&quot;&gt;&lt;a href=&quot;#Create_a_new_post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;http://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run_server&quot;&gt;&lt;a href=&quot;#Run_server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;http://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Generate_static_files&quot;&gt;&lt;a href=&quot;#Generate_static_files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;http://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Deploy_to_remote_sites&quot;&gt;&lt;a href=&quot;#Deploy_to_remote_sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;http://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;http://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;http://hexo.io
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
